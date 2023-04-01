@@ -1,11 +1,7 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <script>
-      
-    </script>
-  </body>
-</html>
+let admin;
+let name;
+
+name  = "John";
+admin = name;
+
+alert(`${admin}`);
