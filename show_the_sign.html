@@ -7,7 +7,17 @@
     <script>
       'use strict';
 
-      
+      let number = prompt("Please enter a numeric value.", "");
+
+      if (Number(number) == 0) {
+        alert("0");
+      } else {
+        if (Number(number) > 0) {
+          alert("1");
+        } else {
+          alert("-1");
+        }
+      }
     </script>
   </body>
 </html>
