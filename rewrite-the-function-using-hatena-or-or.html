@@ -7,7 +7,20 @@
     <script>
       'use strict';
 
-      
+      function checkAge(age) {
+        if (age > 18) {
+          return true;
+        } else {
+          return confirm('Do you have your parents permission to access this page?');
+        }
+
+        // 疑問符演算子 '?' を使った場合
+        (age > 18) ? true : confirm('Do you have your parents permission to access this page?');
+
+        // 論理演算子 '||' を使った場合
+        if (age > 18) false || confirm('Do you have your parents permission to access this page?');
+      }
+      checkAge(19);
     </script>
   </body>
 </html>
