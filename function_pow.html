@@ -7,7 +7,15 @@
     <script>
       'use strict';
 
-      
+      let firstArgument = prompt("Please enter the first argument.", "");
+      let secondArgument = prompt("Please enter the second argument.", "");
+
+      let result = pow(firstArgument, secondArgument);
+      alert( result );
+
+      function pow(x, n) {
+        return x ** n;
+      }
     </script>
   </body>
 </html>
