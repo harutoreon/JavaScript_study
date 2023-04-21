@@ -21,13 +21,29 @@
   </head>
   <body>
     <script>
-      // function functionName() {
-      //   ...
-      // }
+      function checkAge(age) {
+        if (age >= 18) {
+          return "you are an adult.";
+        } else {
+          return "you are not adult.";
+        }
+      }
     </script>
 
     <!-- the script with tests (describe, it...) -->
-    <!-- <script src="test.js"></script> -->
+    <script>
+      describe("checkAge", function() {
+        it("When you are eighteen years of age or older", function() {
+          let adultAge = 18;
+          assert.equal(checkAge(adultAge), "you are an adult.");
+        });
+
+        it("when you are under the age of eighteen", function() {
+          let nonAdultAge = 17;
+          assert.equal(checkAge(nonAdultAge), "you are not adult.");
+        });
+      });
+    </script>
     
     <!-- the element with id="mocha" will contain test results -->
     <div id="mocha"></div>
