@@ -1,4 +1,4 @@
-# JavaScript_study
+# javascript_study
 
 ## 学習教材
 - [現代の JavaScript チュートリアル][url]
