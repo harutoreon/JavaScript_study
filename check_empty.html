@@ -21,23 +21,28 @@
   </head>
   <body>
     <script>
-      // function functionName() {
-      //   ...
-      // }
+      function isEmpty(obj) {
+        for (let key in obj) {
+          return false;
+        }
+        return true;
+      }
     </script>
 
     <!-- the script with tests (describe, it...) -->
     <script>
       describe("test isEmpty function", function() {
-        let schedule = {};
-
         it("return true?", function() {
+          let schedule = {};
+
           assert.isTrue(isEmpty(schedule));
         });
-        
-        schedule["8:30"] = "get up";
 
         it("return false?", function() {
+          let schedule = {};
+
+          schedule["8:30"] = "get up";
+
           assert.isFalse(isEmpty(schedule));
         });
       });
