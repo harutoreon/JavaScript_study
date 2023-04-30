@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      'use strict';
+
+      // 最初の文字を大文字にする処理と、残りの文字を取得する処理を分けて記述した場合
+      function ucFirst(str) {
+        let firstChar = str[0].toUpperCase();
+        let remainingCharacters = str.substr(1, str.length -1);
+
+        return firstChar + remainingCharacters;
+      }
+
+      // すべての処理を1行で記述した場合
+      function ucFirst(str) {
+        return str[0].toUpperCase() + str.substr(1, str.length -1);
+      }
+
+      alert(ucFirst("john") == "John");  // true
+    </script>
+  </body>
+</html>
