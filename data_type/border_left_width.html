@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      'use strict';
+
+      function camelize(str) {
+        let words = str.split('-');
+        let joinWord = [];
+
+        for (let word of words) {
+          if (word != "") {
+            let newWord = word[0].toUpperCase() + word.slice(1);
+
+            joinWord.push(newWord);
+          }
+        }
+
+        return joinWord.join('');
+      }
+    </script>
+  </body>
+</html>
