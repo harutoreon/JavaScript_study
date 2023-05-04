@@ -21,13 +21,29 @@
   </head>
   <body>
     <script>
-      // function functionName() {
-      //   ...
-      // }
+      function copySorted(arr) {
+        return arr;
+      }
     </script>
 
     <!-- the script with tests (describe, it...) -->
-    <!-- <script src="test.js"></script> -->
+    <script>
+      describe("copySorted", function() {
+        // it("Were you able to sort alphabetically?", function() {
+        //   let arr = ["HTML", "JavaScript", "CSS"];
+        //   let sorted = copySorted(arr);
+
+        //   assert.deepEqual(sorted, ["CSS", "HTML", "JavaScript"]);
+        // });
+
+        it("Is the contents of the array unchanged??", function() {
+          let arr = ["HTML", "JavaScript", "CSS"];
+          let sorted = copySorted(arr);
+
+          assert.deepEqual(arr, ["HTML", "JavaScript", "CSS"]);
+        });
+      });
+    </script>
     
     <!-- the element with id="mocha" will contain test results -->
     <div id="mocha"></div>
