@@ -7,7 +7,17 @@
     <script>
       'use strict';
 
-      
+      function filterRange(arr, first, last) {
+        let matchedNumber = [];
+
+        for (let element of arr) {
+          if (element >= first && element <= last) {
+            matchedNumber.push(element);
+          }
+        }
+
+        return matchedNumber;
+      }
     </script>
   </body>
 </html>
