@@ -21,13 +21,28 @@
   </head>
   <body>
     <script>
-      // function functionName() {
-      //   ...
-      // }
+      function filterRangeInPlace(arr, first, last) {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] < first || arr[i] > last) {
+            arr.splice(i, 1);
+            i--;
+          }
+        }
+      }
     </script>
 
     <!-- the script with tests (describe, it...) -->
-    <!-- <script src="test.js"></script> -->
+    <script>
+      describe("filterRangeInPlace", function() {
+        it("the same elements?", function() {
+          let arr = [5, 3, 8, 1];
+
+          filterRangeInPlace(arr, 1, 4)
+
+          assert.deepEqual(arr, [3, 1]);
+        });
+      });
+    </script>
     
     <!-- the element with id="mocha" will contain test results -->
     <div id="mocha"></div>
