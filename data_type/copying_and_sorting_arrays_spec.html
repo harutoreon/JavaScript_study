@@ -22,21 +22,22 @@
   <body>
     <script>
       function copySorted(arr) {
-        return arr;
+        let newArr = arr.map(element => element);
+        return newArr.sort();
       }
     </script>
 
     <!-- the script with tests (describe, it...) -->
     <script>
       describe("copySorted", function() {
-        // it("Were you able to sort alphabetically?", function() {
-        //   let arr = ["HTML", "JavaScript", "CSS"];
-        //   let sorted = copySorted(arr);
+        it("Were you able to sort alphabetically?", function() {
+          let arr = ["HTML", "JavaScript", "CSS"];
+          let sorted = copySorted(arr);
 
-        //   assert.deepEqual(sorted, ["CSS", "HTML", "JavaScript"]);
-        // });
+          assert.deepEqual(sorted, ["CSS", "HTML", "JavaScript"]);
+        });
 
-        it("Is the contents of the array unchanged??", function() {
+        it("Is the contents of the array unchanged?", function() {
           let arr = ["HTML", "JavaScript", "CSS"];
           let sorted = copySorted(arr);
 
