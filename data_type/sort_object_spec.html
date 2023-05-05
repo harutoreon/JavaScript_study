@@ -21,13 +21,27 @@
   </head>
   <body>
     <script>
-      // function functionName() {
-      //   ...
-      // }
+      function sortByName(arr) {
+        arr.sort((a, b) => b.name > a.name ? 1 : -1);
+      }
     </script>
 
     <!-- the script with tests (describe, it...) -->
-    <!-- <script src="test.js"></script> -->
+    <script>
+      describe("sortByName", function() {
+        it("return Mary?", function() {
+          let john = { name: "John", age: 25 };
+          let pete = { name: "Pete", age: 30 };
+          let mary = { name: "Mary", age: 28 };
+
+          let arr = [ john, pete, mary ];
+
+          sortByName(arr)
+
+          assert.equal(arr[1].name, "Mary");
+        });
+      });
+    </script>
     
     <!-- the element with id="mocha" will contain test results -->
     <div id="mocha"></div>
