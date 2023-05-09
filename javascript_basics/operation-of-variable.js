@@ -1,7 +1,3 @@
-let admin;
-let name;
+let userName = 'John';
 
-name  = "John";
-admin = name;
-
-alert(`${admin}`);
+alert(userName);
