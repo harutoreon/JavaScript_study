@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    /* 初期状態のスタイル */
+    .language-switch {
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    /* 英語の表示状態 */
+    .language-switch.en .ja-text {
+      display: none;
+    }
+
+    /* 日本語の表示状態 */
+    .language-switch.jp .en-text {
+      display: none;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="language-switch en" onmouseover="toggleLanguage()">
+      <h1><span class="en-text">New York</span></h1>
+      <h1><span class="ja-text">ニューヨーク</span></h1>
+    </div>
+
+    <script>
+      function toggleLanguage() {
+        const languageSwitch = document.querySelector('.language-switch');
+        languageSwitch.classList.toggle('en');
+        languageSwitch.classList.toggle('jp');
+      }
+    </script>
+  </body>
+</html>
