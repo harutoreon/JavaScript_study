@@ -7,4 +7,6 @@ function showUserName(user) {
 }
 
 loadJson('https://jsonplaceholder.typicode.com/users/1')
-  .then(showUserName);
+// loadJson('https://jsonplaceholder.typicod.com/users/1')
+  .then(showUserName)
+  .catch(error => console.log(error))
