@@ -1,20 +1,10 @@
-function loadScript(src) {
-  return new Promise((resolve, reject) => {
-    let script = document.createElement('script');
-    script.src = src;
-
-    script.onload = () => resolve(script);
-    script.onerror = () => reject(new Error("Script load error: " + src));
-
-    document.head.append(script)
-  });
+function loadJson(url) {
+  return fetch(url).then(response => response.json());
 }
 
-let promise = loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js");
+function showUserName(user) {
+  return console.log(user.name);
+}
 
-promise.then(
-  script => console.log(`${script.src} is loaded!`),
-  error => console.log(`Error: ${error.message}`)
-);
-
-promise.then(script => console.log('Another heandler...'));
+loadJson('https://jsonplaceholder.typicode.com/users/1')
+  .then(showUserName);
