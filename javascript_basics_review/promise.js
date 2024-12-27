@@ -1,12 +1,16 @@
-function loadJson(url) {
-  return fetch(url).then(response => response.json());
+let cache = new Map();
+
+function loadCached(url) {
+  if (cache.has(url)) {
+    return Promise.resolve(cache.get(url));  // (*)
+  }
+
+  return fetch(url)
+    .then(response => response.text())
+    .then(text => {
+      cache.set(url,text);
+      return text;
+    });
 }
 
-function showUserName(user) {
-  return console.log(user.name);
-}
-
-loadJson('https://jsonplaceholder.typicode.com/users/1')
-// loadJson('https://jsonplaceholder.typicod.com/users/1')
-  .then(showUserName)
-  .catch(error => console.log(error))
+console.log(loadCached('https://api.github.com/users/iliakan'));
